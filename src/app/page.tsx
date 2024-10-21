@@ -2,7 +2,7 @@
 
 import { Done, Nihol, Partner, VectorRight } from "@/assets";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "flowbite";
 
 import { FaPlus, FaMinus } from "react-icons/fa";
@@ -38,9 +38,17 @@ const Home = () => {
   const images = [Partner, Partner, Partner, Partner, Partner];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextImage = () => {
+  // const nextImage = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  // };
+
+  // useEffect(() => {
+  //   const interval = setInterval(nextImage, 2000);
+  //   return () => clearInterval(interval);
+  // }, [nextImage]);
+  const nextImage = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const interval = setInterval(nextImage, 2000);
@@ -160,8 +168,8 @@ const Home = () => {
                     className="transition-opacity duration-700 ease-in-out"
                   >
                     <Image
-                      src={image}
-                      alt={`Partner ${index + 1}`}
+                      src={images[currentIndex]}
+                      alt={`Image ${currentIndex}`}
                       className="rounded-lg"
                       width={300}
                       height={400}
