@@ -45,7 +45,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(nextImage, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextImage]);
 
   const getVisibleImages = () => {
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
