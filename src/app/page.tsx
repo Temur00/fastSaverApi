@@ -11,7 +11,7 @@ const Home = () => {
   // Open answers
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleText = (index: any) => {
+  const toggleText = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
