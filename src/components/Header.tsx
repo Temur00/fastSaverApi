@@ -54,7 +54,7 @@ export default function Header() {
                 <Link href="/" className="text-white">
                   Documentation
                 </Link>
-                <Link href="/">
+                <Link href="/loginPage">
                   <button className="w-[71px] text-black bg-white h-[39px] rounded-xl flex justify-center items-center text-[16px]">
                     Login
                   </button>
@@ -115,7 +115,7 @@ export default function Header() {
                 Pricing
               </Link>
 
-              <Link href="/">
+              <Link href="/loginPage">
                 <button className="w-[71px] text-black bg-white h-[39px] rounded-xl flex justify-center items-center text-[16px]">
                   Login
                 </button>

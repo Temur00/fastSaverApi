@@ -4,7 +4,7 @@ import React from "react";
 
 const ControlPage = () => {
   return (
-    <main className=" bg-slate-950">
+    <main className=" bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#1c113e_85%,#010101_100%)]">
       <section>
         <div className="container mx-auto pt-[81px]">
           <p className="sm:text-[54px] text-[36px] text-white font-bold text-center pt-[80px] sm:pt-[120px] tracking-tighter">

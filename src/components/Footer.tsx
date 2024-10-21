@@ -5,7 +5,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-black bottom-0  left-0 right-0">
+    <div className="bg-black bottom-0  left-0 right-0 ">
       <div className="container pt-2 mx-auto sm:flex text-center sm:justify-between items-center h-[64px]">
         <p className="text-[#808080] text-[14px]">
           @ 2024 FastSaverApi. All rights reserved

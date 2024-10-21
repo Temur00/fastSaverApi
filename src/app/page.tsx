@@ -5,15 +5,36 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import "flowbite";
 
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // Open answers
+  const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleText = () => {
-    setIsOpen(!isOpen);
+  const toggleText = (index: any) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqData = [
+    {
+      question: "How does the pricing work for teams?",
+      answer: "Lorem ipsum dolor sit amet...",
+    },
+    {
+      question: "In what projects API can be used?",
+      answer: "Lorem ipsum dolor sit amet...",
+    },
+    {
+      question: "How I can pay for API access?",
+      answer: "Lorem ipsum dolor sit amet...",
+    },
+    {
+      question: "How this site is so beautiful?",
+      answer: "Veeeeery beautifuuul...",
+    },
+  ];
+
+  // Carousel
   const images = [Partner, Partner, Partner, Partner, Partner];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -54,7 +75,7 @@ const Home = () => {
                 Api
               </p>
             </div>
-            <p className="text-white text-center w-[380px] pl-6 pr-6 mx-auto ">
+            <p className="text-white text-center sm:w-[380px] pl-6 pr-6 mx-auto ">
               the world's largest API hub, is used by over four thousand
               developers to find, test and connect to some API
             </p>
@@ -68,7 +89,7 @@ const Home = () => {
             <p className="text-center pt-[100px] sm:pt-[221px] sm:text-[54px] text-[45px] font-bold tracking-tighter text-white">
               Everything you need
             </p>
-            <p className="mx-auto w-[532px] gap-4 pt-[20px] text-white ">
+            <p className="mx-auto sm:w-[532px] gap-4 pt-[20px] text-white ">
               Enjoy customizable lists, team work tools, and smart tracking all
               in one place. Set tasks, get reminders, and see your progress
               simply and quickly.
@@ -126,7 +147,7 @@ const Home = () => {
             <p className="pt-[97px] sm:text-[54px] text-[45px] tracking-tighter text-center text-white">
               Our partners
             </p>
-            <p className="text-[22px] w-[500px] mx-auto text-center text-white">
+            <p className="text-[22px] sm:w-[500px] mx-auto text-center text-white">
               Over 20+ successful telegram bots were run by FastSaver API in
               2024
             </p>
@@ -175,7 +196,7 @@ const Home = () => {
           <p className="pt-[97px] sm:text-[54px] text-[45px] tracking-tighter text-center text-white">
             Perfect service
           </p>
-          <p className="text-[22px] w-[500px] mx-auto text-center text-white">
+          <p className="text-[22px] sm:w-[500px] mx-auto text-center text-white">
             We provide service capable of withstanding huge stands. We use open
             APIs to perform distributed queries.
           </p>
@@ -272,68 +293,40 @@ const Home = () => {
           </div>
           <div className="pt-[70px]"></div>
         </section>
-        <section className=" mx-auto ">
-          <div className="container">
-            <p className="sm:pt-[97px] pt-[50px] sm:text-[54px] text-[45px] tracking-tighter text-center text-white">
+
+        <section className="mx-auto">
+          <div className="container pb-20">
+            <p className="sm:pt-[97px] pt-[50px] sm:text-[54px] text-[45px] tracking-tighter text-center text-white ">
               Frequently asked questions
             </p>
-            {/* PLUS MINUS */}
-            <div className="flex flex-col gap-4 w-[673px] mx-auto">
-              <div className="flex justify-between items-center pt-[67px]">
-                <p className="text-[18px] font-bold text-white">
-                  How does the pricing work for teams
-                </p>
-                <p className="flex cursor-pointer" onClick={toggleText}>
-                  <FaPlus className="w-8 h-8 text-white" />
-                </p>
-              </div>
-              {isOpen && (
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
-                  magni illum et dolor reprehenderit nulla ad mollitia
-                  accusantium nam animi voluptatem inventore, assumenda minima
-                  culpa! Placeat illo voluptatibus tenetur sequi labore? Optio
-                  animi beatae numquam.
-                </p>
-              )}
-              <hr className="bg-black" />
-            </div>
-            <div className="flex flex-col gap-4 w-[673px] mx-auto">
-              <div className="flex justify-between items-center pt-[67px]">
-                <p className="text-[18px] font-bold text-white">
-                  In what projects API can be used
-                </p>
-                <p className="flex cursor-pointer">
-                  <FaPlus className="w-8 h-8 text-white" />
-                </p>
-              </div>
 
-              <hr className="bg-black" />
-            </div>
-            <div className="flex flex-col gap-4 w-[673px] mx-auto">
-              <div className="flex justify-between items-center pt-[67px]">
-                <p className="text-[18px] font-bold text-white">
-                  How I can pay for API access
-                </p>
-                <p className="flex cursor-pointer">
-                  <FaPlus className="w-8 h-8 text-white" />
-                </p>
+            {/* FAQ items */}
+            {faqData.map((faq, index) => (
+              <div
+                key={index}
+                className="flex flex-col gap-4 max-w-[673px] mx-auto "
+              >
+                <div className="flex justify-between items-center pt-[67px]">
+                  <p className="text-[18px] font-bold text-white">
+                    {faq.question}
+                  </p>
+                  <p
+                    className="flex cursor-pointer"
+                    onClick={() => toggleText(index)}
+                  >
+                    {openIndex === index ? (
+                      <FaMinus className="w-8 h-8 text-white" />
+                    ) : (
+                      <FaPlus className="w-8 h-8 text-white" />
+                    )}
+                  </p>
+                </div>
+                {openIndex === index && (
+                  <p className="text-white">{faq.answer}</p>
+                )}
+                <hr className="bg-black" />
               </div>
-
-              <hr className="bg-black" />
-            </div>
-            <div className="flex flex-col gap-4 w-[673px] mx-auto">
-              <div className="flex justify-between items-center pt-[67px]">
-                <p className="text-[18px] font-bold text-white">
-                  How this site is so beatifull{" "}
-                </p>
-                <p className="flex cursor-pointer" onClick={toggleText}>
-                  <FaPlus className="w-8 h-8 text-white" />
-                </p>
-              </div>
-
-              <hr className="bg-black" />
-            </div>
+            ))}
           </div>
         </section>
       </div>
