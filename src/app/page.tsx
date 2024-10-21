@@ -9,7 +9,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 const Home = () => {
   // Open answers
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleText = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
