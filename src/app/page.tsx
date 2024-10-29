@@ -1,6 +1,20 @@
 "use client";
 
-import { Done, Nihol, Partner, VectorRight } from "@/assets";
+import {
+  Done,
+  Nihol,
+  Partner1,
+  Partner2,
+  Partner3,
+  Partner4,
+  Partner5,
+  Partner6,
+  Partner7,
+  Partner8,
+  Partner9,
+  Partner10,
+  VectorRight,
+} from "@/assets";
 import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
 import "flowbite";
@@ -35,17 +49,20 @@ const Home = () => {
   ];
 
   // Carousel
-  const images = [Partner, Partner, Partner, Partner, Partner];
+  const images = [
+    Partner1,
+    Partner2,
+    Partner3,
+    Partner4,
+    Partner5,
+    Partner6,
+    Partner7,
+    Partner8,
+    Partner9,
+    Partner10,
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // const nextImage = () => {
-  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  // };
-
-  // useEffect(() => {
-  //   const interval = setInterval(nextImage, 2000);
-  //   return () => clearInterval(interval);
-  // }, [nextImage]);
   const nextImage = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, [images.length]);
@@ -168,17 +185,16 @@ const Home = () => {
                     className="transition-opacity duration-700 ease-in-out"
                   >
                     <Image
-                      src={images[currentIndex]}
-                      alt={`Image ${currentIndex}`}
+                      src={image} // Use the correct image here
+                      alt={`Image ${index}`}
                       className="rounded-lg"
-                      width={300}
-                      height={400}
+                      width={340}
+                      height={455}
                     />
                   </div>
                 ))}
               </div>
-              <div className="absolute z-30 flex -translate-x-1/2  bottom-[-0px] sm:bottom-[-160px] md:bottom-[-180px] left-1/2 space-x-3">
-                {" "}
+              <div className="absolute z-30 flex -translate-x-1/2 bottom-[-0px] sm:bottom-[-160px] md:bottom-[-180px] left-1/2 space-x-3">
                 {images.map((_, index) => (
                   <button
                     key={index}
