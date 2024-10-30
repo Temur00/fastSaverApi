@@ -76,25 +76,27 @@ const ControlPage = () => {
         <p className="text-[54px] text-white font-bold text-center pt-[120px] tracking-tighter">
           Your current plan
         </p>
-        <div className="max-w-[1005px] mx-auto h-[587px] p-[51px] bg-black mt-16 rounded-lg">
-          <p className="text-[36px] sm:text-[64px] font-bold text-white">
-            Ultra plan
-          </p>
-          <p className="text-[32px] font-bold text-blue-700">Active</p>
-          <p className="sm:text-[32px] text-[28px] font-medium text-white pt-[60px]">
-            500K requests/monthly
-          </p>
-          <p className="sm:text-[32px] text-[28px] font-medium text-white pt-[43px]">
-            24/7 support
-          </p>
-          <p className="sm:text-[32px] text-[28px] font-medium text-white pt-[43px]">
-            12 requests per second
-          </p>
-          <div className="flex justify-end items-center sm:pt-5 pt-3">
-            <p className="text-white text-[34px] sm:text-[54px] font-bold">
-              $36
+        <div className=" px-4 sm:px-6 md:px-8 lg:mx-auto">
+          <div className="max-w-[550px] md:max-w-[800px] lg:max-w-[1005px] mx-auto   h-[587px] p-[51px] bg-black mt-16 rounded-lg ">
+            <p className="text-[36px] sm:text-[64px] font-bold text-white">
+              Ultra plan
             </p>
-            <p className="text-white sm:pt-5 pt-2 text-[20px]">/monthly</p>
+            <p className="text-[32px] font-bold text-blue-700">Active</p>
+            <p className="sm:text-[32px] text-[28px] font-medium text-white pt-[60px]">
+              500K requests/monthly
+            </p>
+            <p className="sm:text-[32px] text-[28px] font-medium text-white pt-[43px]">
+              24/7 support
+            </p>
+            <p className="sm:text-[32px] text-[28px] font-medium text-white pt-[43px]">
+              12 requests per second
+            </p>
+            <div className="flex justify-end items-center sm:pt-5 pt-3">
+              <p className="text-white text-[34px] sm:text-[54px] font-bold">
+                $36
+              </p>
+              <p className="text-white sm:pt-5 pt-2 text-[20px]">/monthly</p>
+            </div>
           </div>
         </div>
         <p className="text-[#2c2c2c] font-bold text-center sm:pt-[120px] pt-[60px] tracking-tighter sm:pb-[93px] pb-[53px]">

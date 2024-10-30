@@ -177,7 +177,7 @@ const Home = () => {
               2024
             </p>
 
-            <div className="relative w-full mx-auto mt-14 sm:mt-32 md:mt-44 mb-12">
+            <div className="relative w-full -mt-8 mx-auto sm:mt-32 md:mt-44 mb-8">
               <div className="flex justify-center items-center space-x-4 h-[400px]">
                 {getVisibleImages().map((image, index) => (
                   <div
@@ -210,14 +210,14 @@ const Home = () => {
               </div>
             </div>
 
-            <p className="text-[22px] text-center pt-20 sm:pt-36 md:pt-44 text-white">
+            <p className="text-[22px] text-center pt-4 sm:pt-36 md:pt-44 text-white">
               Thanks for working with FastSaver API!
             </p>
           </div>
         </section>
 
         <section className="container mx-auto" id="pricing">
-          <p className="pt-[97px] sm:text-[54px] text-[45px] tracking-tighter text-center text-white">
+          <p className="pt-[64px] sm:text-[54px] text-[45px] tracking-tighter text-center text-white">
             Perfect service
           </p>
           <p className="text-[22px] sm:w-[500px] mx-auto text-center text-white">

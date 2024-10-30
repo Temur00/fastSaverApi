@@ -361,7 +361,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="flex">
-              <div className="hidden gap-6 justify-between items-center sm:flex">
+              <div className="hidden gap-6 justify-between items-center md:flex">
                 <Link href={"/controlPanel"} className="text-white">
                   <b>Dashboard</b>
                 </Link>
@@ -390,7 +390,7 @@ export default function Header() {
 
               <button
                 onClick={handleClick}
-                className="pt-2 flex-col gap-1 justify-center items-center block sm:hidden w-[32px] h-[32px] cursor-pointer dark:text-slate-200 text-[#22202E] hover:text-slate-950"
+                className="pt-2 flex-col gap-1 justify-center items-center block md:hidden w-[32px] h-[32px] cursor-pointer dark:text-slate-200 text-[#22202E] hover:text-slate-950"
               >
                 <span
                   className={`bg-steel-500 block transition-all duration-300 ease-out

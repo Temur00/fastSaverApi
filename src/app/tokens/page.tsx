@@ -46,8 +46,8 @@ const Tokens: React.FC = () => {
   };
 
   return (
-    <main className="bg-black h-screen pt-[100px] sm:pt-[150px] text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#1c113e_85%,#010101_100%)]">
-      <div className="container mx-auto px-4 sm:px-0">
+    <main className="bg-black min-h-screen sm:px-8 px-5  pt-[100px] sm:pt-[150px] text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#1c113e_85%,#010101_100%)]">
+      <div className="container mx-auto  sm:px-0 ">
         <h1 className="text-2xl sm:text-3xl font-bold mb-6">API Tokens</h1>
         <p className="text-base sm:text-lg mb-4">
           Create tokens and use them to access your API
